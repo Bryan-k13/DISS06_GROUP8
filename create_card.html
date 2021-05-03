@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet"href="nav.css">
+	<title></title>
+	<style type="text/css">
+		body{
+			background-color:  #87cefa;
+		}
+		main{
+			margin-top: 1vh;
+			display:grid;
+			
+			grid-template-columns:repeat(3,1fr);
+			grid-template-rows:48vh;
+			grid-gap: 1em;
+			grid-template-areas: 
+			"corporate informal custom"
+			;
+			background-color: #87cefa;
+		}
+		img{
+			height: 100%;
+			width: 100%;
+		}
+		
+		
+		ul li{
+			padding:1px 20px 1px 20px;
+			border: 2px solid black;
+			background-color: #AFEEEE;
+			padding-top: 15px;
+		}
+		.navbar{
+			font-size: 25px;
+			border-radius:10px 20px;
+			font-family: arial;
+			background-color: #203647;
+		}
+
+		.navbar_item{
+			color: white;
+			height: 50px;
+			border-radius:12px 20px;
+			background-color: #4DA8DA;
+		}
+
+		
+		#cor{
+			grid-area:corporate;
+			background-color: #4DA8DA;
+			border:3px solid lightblue;
+			border-radius: 15px;
+
+		}
+		#inf{
+			grid-area:informal;
+			background-color:#4DA8DA;
+			border:3px solid lightblue;
+			border-radius: 15px;
+
+		}
+		#cus{
+			grid-area:custom;
+			background-color:#4DA8DA;
+			border:3px solid lightblue;
+			border-radius: 15px;
+		}
+
+		a{
+			text-decoration: none;
+		}
+		
+		a:hover {
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+	}
+	@media screen and (max-width: 860px){
+		main{
+			grid-template-columns:1fr;
+			grid-template-rows:repeat(3,60vh);
+			grid-gap: 1em;
+			grid-template-areas: 
+			'corporate'
+			'informal'
+			'custom'
+			;
+			background-color:#87cefa;
+		}
+
+
+		
+	</style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+		<div class="navbar_container">
+			<a href="index.html"id="navbar_logo">Category of Card</a>
+		<div class="navbar_toggle" id="mobile-menu">
+			<span class="bar"> </span><span class="bar"> </span><span class="bar"> </span>
+		</div>
+		<ul class="navbar_menu">
+			<a href="index.html"><li class="navbar_item">Home</li></a>
+			<a href="create_card.html"><li class="navbar_item">Cards</li></a>
+			<a href="example.html"><li class="navbar_item">Sample</li></a>
+			<a href="about.html"><li class="navbar_item">About</li></a>
+		</ul>
+		</div>
+	</nav>
+</header>
+<main>
+	<a id="cor"href="form.html"><img src="C&P.png"></a>
+	<a id="inf" href="infor_lay_one.html "><img src="informal.png"></a>
+	<a id="cus" href="custom.html "><img src="Customize.png"></a>
+</main>
+<script type="text/javascript">
+	/*get from www.youtube.com*/ 
+		const menu =document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar_menu');
+		menu.addEventListener('click',function(){
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>

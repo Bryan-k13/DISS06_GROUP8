@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet"href="nav.css">
+	<title>Homepage</title>
+	<style type="text/css">
+			body{
+			background-color:  #87cefa;
+		}
+		
+	article{
+			margin-top: 1vh;
+			display:grid;
+			text-align: center;
+			grid-template-columns:repeat(2,1fr);
+			grid-template-rows:60vh;
+			grid-gap: 1em;grid-template-areas: 
+			'card preview ';
+			
+			background-color:#87cefa;
+		}
+		img{
+			height: 79%;
+			width: 100%;
+			margin-top: 30px;
+		}
+		
+		
+		ul li{
+			padding:1px 20px 1px 20px;
+			padding-top: 15px;
+			border: 2px solid black;
+			background-color: #AFEEEE;
+
+
+		}
+
+		.navbar{
+			font-size: 25px;
+			border-radius:10px 20px;
+			font-family: arial;
+			background-color: #203647;
+			
+			
+		}
+		.navbar_item{
+			color: white;
+			height: 50px;
+			border-radius:12px 20px;
+			background-color: #4DA8DA;
+		
+
+		}
+
+		.layout{
+			height: 99%;
+			background-color: #4DA8DA;
+			border-radius: 15px;
+			margin-top: 0;
+		}
+		#pre{
+			grid-area:preview;
+			background-color: #EEFBFB;
+			border:3px solid lightblue;
+			border-radius: 15px;
+
+
+		}
+		#own{
+			grid-area:card;
+			background-color: #EEFBFB;
+			border:3px solid lightblue;
+			border-radius: 15px;
+
+		}
+		#inf{
+			grid-area:informal;
+			background-color: #EEFBFB;
+			border:px solid black;
+
+		}
+		#navbar_logo{
+			grid-area: logo;
+
+		}
+
+		a{
+			text-decoration: none;
+		}
+
+
+
+		a:hover {
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.9);
+	}
+
+
+	
+	@media screen and (max-width: 860px){
+		article{
+		
+			grid-template-columns:1fr;
+			grid-template-rows:repeat(2,60vh);
+			grid-gap: 1em;
+			grid-template-areas: 
+			'card'
+			'preview'
+			;
+			background-color:#87cefa;
+	
+		}
+		
+	}
+		
+	
+	</style>
+	
+</head>
+<body>
+	
+	<header>
+	<!-- all navigation get is from youtube -->
+	<nav class="navbar">
+		<div class="navbar_container">
+			<a href="index.html"id="navbar_logo">Home</a>
+		<div class="navbar_toggle" id="mobile-menu">
+			<span class="bar"> </span><span class="bar"> </span><span class="bar"> </span>
+		</div>
+		<ul class="navbar_menu">
+			<a href="index.html"><li class="navbar_item">Home</li></a>
+			<a href="create_card.html"><li class="navbar_item">Cards</li></a>
+			<a href="example.html"><li class="navbar_item">Sample</li></a>
+			<a href="about.html"><li class="navbar_item">About</li></a>
+		</ul>
+		</div>
+	</nav>
+</header>
+
+<main>
+	<article>
+		<a href="create_card.html"id="own">
+			<h1  class="layout"><img src="make.png"></h1>
+		</a>
+		<a href="example.html"id="pre">
+			<h1  class="layout"><img src="ex1.png"></h1>
+		</a>
+	</article>
+</main>
+<script type="text/javascript">
+	localStorage.setItem("greet","Hello");
+		localStorage.setItem("greet1","Assalamualaikum");
+		localStorage.setItem("greet2","Good Morning");
+		localStorage.setItem("greet3","Good Evening");
+		localStorage.setItem("greet4","Salam Sejahtera");
+		const menu =document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar_menu');
+		menu.addEventListener('click',function(){
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>

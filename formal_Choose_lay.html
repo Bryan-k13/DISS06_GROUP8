@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet"href="nav.css">
+	<title></title><style type="text/css">
+		body{
+			background-color: #87cefa;
+		}
+		article{
+			margin-top: 10vh;
+			display:grid;
+			text-align: center;
+			grid-template-columns:repeat(2,1fr);
+			grid-template-rows:80vh;
+			grid-gap: 1em;
+			grid-template-areas: 
+			"layone laytwo";
+			background-color:#87cefa;
+		}
+		div{
+			height: 100%;
+		}
+		
+		#lay1{
+			grid-area:layone;
+			background-color:aquamarine;
+			border:1px solid black;
+
+
+		}
+		#lay2{
+			grid-area:laytwo;
+			background-color: aquamarine;
+			border:1px solid black;
+			justify-content: center;
+			align-items: center;
+		}
+
+
+		
+	.shadow:hover {
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+	}
+
+	
+		/*ul{
+			list-style: none;
+			margin-left:70%;
+		}*/
+		ul li{
+			padding:1px 20px 1px 20px;
+			/*display: inline-block;*/
+			border: 2px solid black;
+			background-color: #AFEEEE;
+		}
+		@media screen and (max-width: 860px){
+		article{
+			/*margin-top: 10vh;
+			display:grid;
+			text-align: center;*/
+			grid-template-columns:1fr;
+			grid-template-rows:repeat(2,60vh);
+			grid-gap: 1em;
+			grid-template-areas: 
+			'layone'
+			'laytwo'
+			;
+			background-color:#87cefa;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		
+	<nav class="navbar">
+		<div class="navbar_container">
+			<a href="index.html"id="navbar_logo">Choose formal card layout</a>
+		<div class="navbar_toggle" id="mobile-menu">
+			<span class="bar"> </span><span class="bar"> </span><span class="bar"> </span>
+		</div>
+		<ul class="navbar_menu">
+			<a href="index.html"><li class="navbar_item">Home</li></a>
+			<a href="Create card.html"><li class="navbar_item">Cards</li></a>
+			<a href=""><li class="navbar_item">Favorite</li></a>
+			<a href="about.html"><li class="navbar_item">About</li></a>
+		</ul>
+		</div>
+	</nav>
+</header>
+<main>
+	<article>
+		<a href="formal_lay_one.html" ><div id="lay1" class="shadow">Layout 1</div></a>
+	<a href="formal_lay_two.html"><div id="lay2" class="shadow">Layout 2 </div></a>
+</article>
+</main>
+<script type="text/javascript">
+		const menu =document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar_menu');
+		menu.addEventListener('click',function(){
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet"href="nav.css">
+	<title></title>
+	
+<link href="https://fonts.googleapis.com/css2?family=Arial&family=Antonio&family=Dancing+Script&family=Sofia&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			display: grid;
+			background-color:#87cefa; 
+			grid-template-columns:80% 20%;
+			grid-auto-rows: auto;
+			grid-template-areas: 
+			'head head'
+			'lefts rights';
+		}
+		#head{
+			grid-area: head;
+		}
+		#left{
+			grid-area: lefts;
+
+		}
+		#right{
+			grid-area: rights;
+			display: grid;
+			grid-template-columns:50% 50%;
+			grid-template-rows: repeat(9,8vh);
+			grid-template-areas: 
+			"fon fon"
+			"sofia antinio"
+			"scrip arial"
+			"roman roman"
+			"col col"
+			"reds blues"
+			"greens greys"
+			"golds purples"
+			"whites whites"
+			"back save"
+			"submit submit";
+		}
+		#red {
+			grid-area:reds;
+		}
+			#blue {
+			grid-area:blues;
+		}
+		#green {
+			grid-area:greens;
+		}
+		#grey {
+			grid-area:greys;
+		}
+		#gold {
+			grid-area:golds;
+		}
+		#purple{
+			grid-area:purples;
+		}
+		#white{
+			grid-area: whites;
+		}
+		#sofia{
+			grid-area: sofia;
+		}
+		#antinio{
+			grid-area: antinio;
+		}
+		#scrip{
+			grid-area: scrip;
+		}
+		#arial{
+			grid-area: arial;
+		}
+		#roman{
+			grid-area: roman;
+		}
+		#col{
+			grid-area: col;
+		}
+		#fon{
+			grid-area: fon;
+		}
+		#save{
+			grid-area: save;
+		}
+		#submit{
+			grid-area: submit;
+		}
+		#back{
+			grid-area: back;
+		}
+		.container{
+			width: 100%;
+			height:100vh;
+			background:#87cefa; ;
+			background-size: cover;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.card{
+			width:360px;
+			height: 560px;
+			
+			position: relative;
+			perspective: 1000px;
+		}
+		.left-side{
+			position:absolute;
+			top:0;
+			left:0;
+			background-color: green;
+			background: url(cover_informal_lay1.png)no-repeat;
+			background-size: cover;
+			background-position-x:0; 
+			width: 50%;
+			height: 100%;
+			transform: rotateY(0deg);
+			transform-origin: left;
+			transition: transform 2s;
+		}
+		.right-side{
+			position:absolute;
+			top:0;
+			right:0;
+			background-color:red;
+			background:url(cover_informal_lay1.png)no-repeat;
+			background-size: cover;
+			background-position-x:-180px; 
+			width: 50%;
+			height: 100%;
+			transform: rotateY(0deg);
+			transform-origin: right;
+			transition: transform 2s;
+
+		}
+		
+		#back-side{
+			position:absolute;
+			top:0;
+			right:0;
+			width: 100%;
+			height: 100%;
+			background-color: #ce93d8;
+			z-index: -1;
+			transform:translateZ(-300px);
+			transition: z-index 0.4s step-end, transform 1s;
+		}
+		iframe{
+			position:absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.card:hover .left-side{
+			transform: rotateY(-360deg);
+		}
+		.card:hover .right-side{
+			transform: rotateY(360deg);
+		}
+		.card:hover #back-side{
+			transform: rotateZ(0);
+			z-index: 1;
+		}
+		#sition{
+			text-align: center;
+			padding: 50px 20px;
+		}
+		
+		button,  .choose,input{
+		width:100%;
+		height: 70%;
+		text-align: center;
+		font-family: "Orelega One";
+	}
+	.line{
+		display:inline;
+	}
+
+	/*get from www.w3schools.com*/
+	/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a{
+			text-decoration: none;
+		}
+
+		.navbar{
+			margin-top: 8px;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		function load(){
+		var firstname1 =document.getElementById("firstnames1");
+	var age1 = document.getElementById("ages1");
+	
+	var date1 = document.getElementById("dates1");
+	var time1 = document.getElementById("times1");
+	var secret1 = document.getElementById("secrets1");
+
+	
+	firstname1.innerHTML=localStorage.getItem("firstnames");
+	age1.innerHTML=localStorage.getItem("ages");
+	date1.innerHTML=localStorage.getItem("dates");
+	
+	time1.innerHTML=localStorage.getItem("times");
+	secret1.innerHTML=localStorage.getItem("secrets");
+
+
+
+	}
+	function save(){
+		var firstname1 =document.getElementById("firstnames1");
+	var age1 = document.getElementById("ages1");
+	
+	var date1 = document.getElementById("dates1");
+	var time1 = document.getElementById("times1");
+	var secret1 = document.getElementById("secrets1");
+
+	
+	localStorage.setItem("firstnames1",firstname1.innerHTML);
+	localStorage.setItem("ages1",age1.innerHTML);
+	
+	localStorage.setItem("dates1",date1.innerHTML);
+	localStorage.setItem("times1",time1.innerHTML);
+	localStorage.setItem("secrets1",secret1.innerHTML);
+	}
+	
+	function font(value){
+		var out =document.getElementById("back-side");
+		if(value==1){
+			out.style.fontFamily="Sofia";
+		}
+		else if(value==2){
+			out.style.fontFamily="Antonio";
+		}
+		else if(value==3){
+			out.style.fontFamily="Dancing Script";
+		}
+		else if(value==4){
+			out.style.fontFamily="Arial";
+		}
+		else if(value==5){
+			out.style.fontFamily="Times New Roman";
+		}
+	}
+	function red(){
+    document.getElementById('back-side').style.backgroundColor="#ce93d8";
+	}	
+	function blue(){
+    document.getElementById('back-side').style.backgroundColor="#63c5da";
+	}
+	function green(){
+    document.getElementById('back-side').style.backgroundColor="#5dbb63";
+	}
+	function gold(){
+    document.getElementById('back-side').style.backgroundColor="lightyellow";
+	}
+	function grey(){
+    document.getElementById('back-side').style.backgroundColor="grey";
+	}
+	function purple(){
+    document.getElementById('back-side').style.backgroundColor="#ffc594";
+	}
+	
+	function white(){
+    document.getElementById('back-side').style.backgroundColor="#f1f1f1";
+	}
+	function submit(){
+	// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+ modal.style.display = "block";
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}
+
+	</script>
+</head>
+<body onload="load()">
+	<header id="head">
+		
+	<nav class="navbar">
+		<div class="navbar_container">
+			<a href="index.html"id="navbar_logo">Informal Card Design 1</a>
+		<div class="navbar_toggle" id="mobile-menu">
+			<span class="bar"> </span><span class="bar"> </span><span class="bar"> </span>
+		</div>
+		<ul class="navbar_menu">
+			<a href="index.html"><li class="navbar_item">Home</li></a>
+			<a href="create_card.html"><li class="navbar_item">Cards</li></a>
+			<a href=""><li class="navbar_item">Sample</li></a>
+			<a href="about.html"><li class="navbar_item">About</li></a>
+		</ul>
+		</div>
+	</nav>
+</header>
+	<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Send Succesfully</h1>
+    <p>If you want to go Homepage and create new card <a href="index.html">click here</a></p>
+    
+  </div>
+
+</div>
+
+	<div id=left>
+	<div class ="container">
+<div class="card">
+	<div class="sides left-side" ></div>
+	<div class="sides right-side"></div>	
+	<div id="back-side"><div id="sition"><h1 contenteditable="true">Happy birthday Party!</h1>
+	
+		<h2 id="firstnames1" contenteditable="true"></h2>
+		<h2 contenteditable="true"> is turning </h2>
+		<h2 id="ages1" contenteditable="true"></h2>
+
+	
+	<h2>Date:</h2>
+	<h2 id="dates1" contenteditable="true"></h2>
+	<h2>Time:</h2>
+	<h2 id="times1" contenteditable="true"></h2>
+	<h2>Address:</h2>
+	<h2 id="secrets1" contenteditable="true"></h2>	
+	</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+<div id="right">
+
+	<h1 class="choose" id="col">Background Color:</h1><br>
+	<button class="but " onclick="red()" id="red">Wisteria</button>
+	<button class="but " onclick="blue()" id="blue">Blue</button>
+	<button class="but" onclick="green()" id="green">Green</button>
+	<button class="but" onclick="grey()" id="grey">Grey</button>
+	<button class="but" onclick="gold()" id="gold">Yellow</button>
+	<button class="but" onclick="purple()" id="purple">Peach</button>
+	<button class="but" onclick="white()" id="white">White</button>
+	
+	<h1 class="choose" id="fon">Font:</h1><br>
+	<button value="1" onclick="font(this.value)" id="sofia" style="font-family:Sofia">Sofia</button>
+	<button value="2" onclick="font(this.value)" id="antinio" style="font-family:Antonio">Antonio</button>
+	<button value="3" onclick="font(this.value)" id="scrip" style="font-family:Dancing Script">Dancing Script</button>
+	<button value="4" onclick="font(this.value)" id="arial" style="font-family:Arial">Arial</button>
+	<button value="5" onclick="font(this.value)" id="roman" style="font-family:Times New Roman">Times New Roman</button>
+	<a href="infor_lay_two.html" id="back"><input type="button" name="back"class="but" id="backs"  value="Back to Form" ></a>
+	<button class="but" onclick="save()" id="save">Favorite</button>
+	<button class="but" onclick="submit()" id="submit">Submit</button>
+	</div>
+<script type="text/javascript">
+		const menu =document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar_menu');
+		menu.addEventListener('click',function(){
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>

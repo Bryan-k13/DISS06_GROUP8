@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet"href="nav.css">
+	<title></title>
+	<style type="text/css">
+		body{
+			background-color:  #87cefa;
+		}
+		h1{
+			text-align: center;
+		}
+		
+		ul{
+			list-style: none;
+		}
+		ul li{
+			padding:1px 20px 1px 20px;
+			border: 2px solid black;
+			background-color: #AFEEEE;
+			padding-top: 15px;
+		}
+		.navbar{
+			font-size: 25px;
+			border-radius:10px 20px;
+			font-family: arial;
+			background-color: #203647;
+		}
+
+		.navbar_item{
+			color: white;
+			height: 50px;
+			border-radius:12px 20px;
+			background-color: #4DA8DA;
+		}
+
+
+		article{
+			text-align: center;
+			font-size: 45px;
+			font-family: "Orelega One";
+		}
+
+		a{
+			text-decoration: none;
+		}
+
+		#img5{
+			width: 45%;
+			height:65%;
+			margin-left: 50px;
+			border: 2px solid;
+		}
+
+		#img4{
+			width: 65%;
+			height:75%;
+			margin-left:50px;
+			border: 2px solid;
+		}
+
+		#img1,#img2,#img3{
+			width: 55%;
+			height:65%;
+			margin-left: 50px;
+			border: 2px solid;
+		}
+
+		#how{
+			text-align: center;
+			font-family: arial;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+	<nav class="navbar">
+		<div class="navbar_container">
+			<a href="index.html"id="navbar_logo">About</a>
+		<div class="navbar_toggle" id="mobile-menu">
+			<span class="bar"> </span><span class="bar"> </span><span class="bar"> </span>
+		</div>
+		<ul class="navbar_menu">
+			<a href="index.html"><li class="navbar_item">Home</li></a>
+			<a href="create_card.html"><li class="navbar_item">Cards</li></a>
+			<a href="example.html"><li class="navbar_item">Sample</li></a>
+			<a href="about.html"><li class="navbar_item">About</li></a>
+		</ul>
+		</div>
+	</nav>
+</header>
+<main>
+	
+	<article>
+		 This website is about how to make your own Birthday invitation e-card. Corporate card,Informal card, Formal card  and Customize Card.
+	</article>
+	<br>
+<div id="how">
+	<h2> 1. FIRST YOU HAVE TO DECIDE WHICH BIRTHDAY CARD DESIGN TO CHOOSE</h2>
+	<div class="INS"><img id="img5" src="INS5.png"></div>
+	<h2> 2. YOU CAN CHOOSE EITHER FORMAL OR CORPORATE AND ALSO INFORMAL CARD</h2>
+	<div class="INS"><img id="img4" src="INS4.png"></div>
+	<h2> 3. IF YOU CHOOSE TO DESIGN THE FORMAL OR CORPORATE DESIGN CARD, YOU CAN IMMIDIATELY CHOOSE TWO LAYOUTS FOR EACH ONE OF THEM BY JUST DESIGNING.</h2>
+	<div class="INS"><img id="img3" src="INS3.png"></div>
+	<br>
+	<h2> 4. IF YOU CHOOSE TO DESIGN THE INFORMAL, YOU CAN JUST CHOOSE THE TWO UNIQUE LAYOUT PROVIDED</h2>
+	<div class="INS"><img id="img1" src="INS1.png"></div>
+	<br>
+	<h2>5. LASTLY YOU CAN CHOOSE TO CUSTOMIZE YOUR OWN CARD</h2>
+	<div class="INS"><img id="img2" src="INS2.png"></div>
+	<br>
+</div>	
+
+</main>
+<script type="text/javascript">
+		const menu =document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar_menu');
+		menu.addEventListener('click',function(){
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet"href="nav.css">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Arial&family=Antonio&family=Dancing+Script&family=Sofia&display=swap" rel="stylesheet">
+	<style type="text/css">
+		
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background-color:#87cefa;
+			display: grid;
+			grid-template-columns:20% 60% 20%;
+			grid-template-areas: 
+			'head head head'
+			'lefts centers rights';
+		}
+		#center{
+		grid-area:centers;
+
+	}
+	#head{
+		grid-area:head;
+	}
+		#left{
+		grid-area:lefts;
+	}
+	#right{
+		grid-area:rights;
+		display: grid;
+			grid-template-columns:50% 50%;
+			grid-template-rows: repeat(9,10vh);
+			grid-template-areas: 
+			"fon fon"
+			"sofia antinio"
+			"scrip arial"
+			"roman roman"
+			"col col"
+			"reds blues"
+			"greens greys"
+			"golds purples"
+			"whites whites"
+			"load load"
+			"submit submit";
+		}
+		#load{
+
+			grid-area:load;
+		    display: grid;
+		    grid-template-columns:repeat(3,1fr);
+		    grid-template-areas: 
+		    "loadone loadtwo loadthree"
+
+		}
+		#red {
+			grid-area:reds;
+		}
+			#blue {
+			grid-area:blues;
+		}
+		#green {
+			grid-area:greens;
+		}
+		#grey {
+			grid-area:greys;
+		}
+		#gold {
+			grid-area:golds;
+		}
+		#purple{
+			grid-area:purples;
+		}
+		#white{
+			grid-area: whites;
+		}
+		#sofia{
+			grid-area: sofia;
+		}
+		#antinio{
+			grid-area: antinio;
+		}
+		#scrip{
+			grid-area: scrip;
+		}
+		#arial{
+			grid-area: arial;
+		}
+		#roman{
+			grid-area: roman;
+		}
+		#col{
+			grid-area: col;
+			text-align: center;
+			font-family: "Orelega One";
+		}
+		#fon{
+			grid-area: fon;
+			text-align: center;
+			font-family: "Orelega One";
+		}
+		#load1{
+			grid-area: loadone;
+		}
+		#load2{
+			grid-area: loadtwo;
+		}
+		#load3{
+			grid-area: loadthree;
+		}
+		
+		#submit{
+			grid-area: submit;
+		}
+		button{
+			font-family: "Orelega One";
+		}
+		.container{
+			width: 100%;
+			height:100vh;
+			background:#87cefa;
+			background-size: cover;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.card{
+			width:450px;
+			height: 660px;
+			background-color: #eee;
+		}
+		.inside{
+			margin:30px 0 0 20px;
+			width:350px;
+			height: 560px;
+			background-color: #eee;
+
+			position: absolute;
+			perspective: 1000px;
+		}
+		#pos{
+			padding-right:  20px;
+		}
+		#back-side{
+			justify-content: center;
+			padding: 50px 0px 0 50px;
+			margin:0 auto;
+			width: 100%;
+			height: 100%;
+			background-color: #ce93d8;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
+			.ltwo{
+				text-align: center;
+			}
+			.empty{
+				float:left; 
+				width:80%; 
+				height:200px; 
+				margin:10px;
+				border:1px solid #aaaaaa;
+			}
+			.border{
+			background: transparent;
+			width:450px;
+			height: 660px;	
+			}
+
+
+			/*get from www.w3schools.com*/
+
+	/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a{
+			text-decoration: none;
+		}
+
+		.navbar{
+			margin-top: 8px;
+		}
+
+
+
+	</style>
+	<script type="text/javascript">
+		// drop_n_drag
+		function allowDrop(ev)
+	{
+	ev.preventDefault();
+	}
+
+	function drag(ev)
+	{
+	ev.dataTransfer.setData("text",ev.target.id);
+	}
+
+	function drop(ev)
+	{
+	ev.preventDefault();
+	var data=ev.dataTransfer.getData("text");
+
+	ev.target.appendChild(document.getElementById(data));
+	
+	}
+	function font(value){
+		var out =document.getElementById("back-side");
+		if(value==1){
+			out.style.fontFamily="Sofia";
+		}
+		else if(value==2){
+			out.style.fontFamily="Antonio";
+		}
+		else if(value==3){
+			out.style.fontFamily="Dancing Script";
+		}
+		else if(value==4){
+			out.style.fontFamily="Arial";
+		}
+		else if(value==5){
+			out.style.fontFamily="Times New Roman";
+		}
+	}
+		function load2(){
+		
+		var birth1=document.getElementById("birth");
+		var dear1 = document.getElementById("dear1");
+		var name2 = document.getElementById("name2");
+		var name1 =document.getElementById("name1");
+		
+		var date2 = document.getElementById("date2");
+		var date1 = document.getElementById("date1");
+		var time1 = document.getElementById("time1");
+		var address2 = document.getElementById("address2");
+		var address1 =document.getElementById("address1");
+
+		birth1.innerHTML="Birthday party invitation";
+		dear1.innerHTML="Dear "+localStorage.getItem("dear")+" "+localStorage.getItem("who")+",";
+		name2.innerHTML="";
+		date2.innerHTML="";
+		name1.innerHTML=localStorage.getItem("greating")+", You are invited to "+localStorage.getItem("name")+" birthday party. "+localStorage.getItem("name")+" will be turning "+localStorage.getItem("age")+" this year.";
+		
+		date1.innerHTML="The date for this party is "+localStorage.getItem("date")+". The birthday celebration will start at "+localStorage.getItem("time")+".";
+		address1.innerHTML="The location will take place at "+localStorage.getItem("address")+".";
+		address2.innerHTML="From:"+localStorage.getItem("from1");
+		time1.innerHTML="";
+	
+	}
+	function load1(){
+	
+		var birth1=document.getElementById("birth");
+		var dear1 = document.getElementById("dear1");
+		var name2 = document.getElementById("name2");
+		var name1 =document.getElementById("name1");
+	
+		var date2 = document.getElementById("date2");
+		var date1 = document.getElementById("date1");
+		var time1 = document.getElementById("time1");
+		var address2 = document.getElementById("address2");
+		var address1 =document.getElementById("address1");
+
+	birth1.innerHTML="Happy birthday Party!";
+	name2.innerHTML=localStorage.getItem("firstname")+" is turning "+localStorage.getItem("ages");
+	date2.innerHTML="Date: "+localStorage.getItem("dates");
+	
+	time1.innerHTML="Time: "+localStorage.getItem("times");
+	address2.innerHTML=localStorage.getItem("secrets");
+	name1.innerHTML="";
+	dear1.innerHTML="";
+	date1.innerHTML="";
+	address1.innerHTML="";
+	}
+	function load3(){
+	
+		var birth1=document.getElementById("birth");
+		var dear1 = document.getElementById("dear1");
+		var name2 = document.getElementById("name2");
+		var name1 =document.getElementById("name1");
+		
+		var date2 = document.getElementById("date2");
+		var date1 = document.getElementById("date1");
+		var time1 = document.getElementById("time1");
+		var address2 = document.getElementById("address2");
+		var address1 =document.getElementById("address1");
+
+	
+	birth1.innerHTML="BIRTHDAY INVITATION";
+	name2.innerHTML="";
+	date2.innerHTML="";
+	
+	time1.innerHTML="";
+	address2.innerHTML="From:"+localStorage.getItem("from4");
+	name1.innerHTML="You are invited to "+localStorage.getItem("who4")+ " birthday party. "+localStorage.getItem("who4")+" will be turning "+localStorage.getItem("age4")+" this year.";
+	dear1.innerHTML="Dear "+localStorage.getItem("dear4")+" "+localStorage.getItem("name4")+",";
+	date1.innerHTML="The date of the party is "+localStorage.getItem("date4")+" .The birthday celebration will start at "+localStorage.getItem("time4")+".";
+	address1.innerHTML="The location will take place at "+localStorage.getItem("address4")+".";
+
+
+	}
+	function red(){
+    document.getElementById('back-side').style.backgroundColor="#ce93d8";
+	}	
+	function blue(){
+    document.getElementById('back-side').style.backgroundColor="#63c5da";
+	}
+	function green(){
+    document.getElementById('back-side').style.backgroundColor="#5dbb63";
+	}
+	function gold(){
+    document.getElementById('back-side').style.backgroundColor="lightyellow";
+	}
+	function grey(){
+    document.getElementById('back-side').style.backgroundColor="grey";
+	}
+	function purple(){
+    document.getElementById('back-side').style.backgroundColor="#ffc594";
+	}
+	function white(){
+    document.getElementById('back-side').style.backgroundColor="white";
+	}
+function submit(){
+	// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+ modal.style.display = "block";
+
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}
+	
+	
+	</script>
+</head>
+<body >
+	<header id="head">
+		
+	<nav class="navbar">
+		<div class="navbar_container">
+			<a href="index.html"id="navbar_logo">Customize Your Card</a>
+		<div class="navbar_toggle" id="mobile-menu">
+			<span class="bar"> </span><span class="bar"> </span><span class="bar"> </span>
+		</div>
+		<ul class="navbar_menu">
+			<a href="index.html"><li class="navbar_item">Home</li></a>
+			<a href="create_card.html"><li class="navbar_item">Cards</li></a>
+			<a href="example.html"><li class="navbar_item">Sample</li></a>
+			<a href="about.html"><li class="navbar_item">About</li></a>
+		</ul>
+		</div>
+	</nav>
+</header>
+	<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Send Succesfully</h1>
+   <p>If you want to go Homepage and create new card <a href="index.html">click here</a></p>
+    
+  </div>
+
+</div>
+	<div id="left">
+		<div class="list_box" >
+			<div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="in_1.png" class="sticker" id="drag1" draggable="true" ondragstart="drag(event)"></div>
+			<div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="3.png" class="sticker" id="drag2" draggable="true" ondragstart="drag(event)"></div>
+		</div>
+	</div>
+<div id="center">
+	<div class="container">
+		
+		<div class="card " >
+<div class="border" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<div class="inside">
+
+<div id="back-side" >
+
+	<div id="pos" >
+
+	<h1 id="birth" class="abs cen" contenteditable="true" >Enter text here</h1><br>
+	<div id="dear1" class="abs lone" contenteditable="true" >Enter text here</div>
+	<h1 id="name2" class="abs ltwo" contenteditable="true" ></h1>
+	<div id="name1" class="abs lone" contenteditable="true" ></div>
+	<h2 id="date2" class="abs ltwo" contenteditable="true" ></h2>
+	<div id="date1" class="abs lone" contenteditable="true" ></div>
+	
+	<div id="address1" class="abs lone" contenteditable="true" ></div>
+	<h3 id="time1" class="abs ltwo" contenteditable="true" ></h3><br><br>
+	<h3 id="address2" class="abs ltwo" contenteditable="true" ></h3>
+	
+</div>
+	</div>
+</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div id="right">
+
+	<h1 class="choose " id="col">Background Color:</h1><br>
+	<button class="but " onclick="red()" id="red">Wisteria</button>
+	<button class="but " onclick="blue()" id="blue">Blue</button>
+	<button class="but" onclick="green()" id="green">Green</button>
+	<button class="but" onclick="grey()" id="grey">Grey</button>
+	<button class="but" onclick="gold()" id="gold">Yellow</button>
+	<button class="but" onclick="purple()" id="purple">Peach</button>
+	<button class="but" onclick="white()" id="white">White</button>
+	<h1 class="choose" id="fon">Font:</h1><br>
+	<button value="1" onclick="font(this.value)" id="sofia" style="font-family:Sofia">Sofia</button>
+	<button value="2" onclick="font(this.value)" id="antinio" style="font-family:Antonio">Antonio</button>
+	<button value="3" onclick="font(this.value)" id="scrip" style="font-family:Dancing Script">Dancing Script</button>
+	<button value="4" onclick="font(this.value)" id="arial" style="font-family:Arial">Arial</button>
+	<button value="5" onclick="font(this.value)" id="roman" style="font-family:Times New Roman">Times New Roman</button>
+	<div id="load">
+	<button class="but" onclick="load1()" id="load1">Load Favorite Informal</button>
+	<button class="but" onclick="load2()" id="load2">Load Favorite Formal</button>
+	<button class="but" onclick="load3()" id="load3">Load Favorite Corporate</button>
+	</div>
+	<button class="but" onclick="submit()" id="submit">Submit</button>
+	</div>
+</body>
+</html>
